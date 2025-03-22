@@ -151,7 +151,7 @@ A comprehensive machine learning pipeline was designed to predict the UHI Index.
 - **Best Method:** Used an ExtraTreesRegressor with a median threshold to select 50% of the features, reducing dimensionality while retaining predictive power.
 
 ### 4. Model Training & Hyperparameter Optimization
-- **Initial Model Exploration:** Tested Neural Networks, Linear Regression, Random Forest, Gradient Boosting, and CatBoost, but they showed low performance (R² < 0.6).
+- **Initial Model Exploration:** Tested Neural Networks, Linear Regression, Random Forest, Gradient Boosting, and CatBoost, but they showed low performance (R² < 0.95).
 - **Selected Models:** Focused on three ensemble models: ExtraTreesRegressor, XGBoost, and LightGBM.
 - **Hyperparameter Optimization (HPO):**
   - **ExtraTrees & XGBoost:** Used Optuna with 200 trials each, employing a Tree-structured Parzen Estimator (TPE) sampler to maximize cross-validation R² scores.
@@ -160,7 +160,7 @@ A comprehensive machine learning pipeline was designed to predict the UHI Index.
 - **Model Blending:** Attempted a weighted blending approach, combining predictions from ExtraTrees, XGBoost, and LightGBM using weights proportional to their validation R² scores. However, this did not improve performance over the individual models.
 
 ### 5. Final Model & Submission
-- **Best Model:** The ExtraTreesRegressor outperformed others with a validation R² score of 0.7823. Model blending yielded an R² of 0.7791, so ExtraTrees was selected for the final predictions.
+- **Best Model:** The ExtraTreesRegressor outperformed others with a validation R² score of 0.973478. Model blending yielded an R² of 0.973082, so ExtraTrees was selected for the final predictions.
 - **Retraining:** Retrained the ExtraTrees model on the full training dataset using the best hyperparameters.
 - **Prediction:** Generated predictions on the validation dataset and created the submission file by combining the predicted UHI Index with the original latitude and longitude coordinates.
 - **Output Files:** Saved the submission (`extratrees_submission_[timestamp].csv`), hyperparameters, blending weights, and feature importance metrics for reference.
@@ -169,8 +169,8 @@ A comprehensive machine learning pipeline was designed to predict the UHI Index.
 The top 10 features contributing to the ExtraTrees model’s predictions were:
 
 - `nclimgrid_band1`: 0.039678 (climate grid data)
-- `Income_1000m`: 0.032545 (median income within 1000m)
-- `Income_500m`: 0.025860 (median income within 500m)
+- `Income_1000m`: 0.032545 (average income within 1000m)
+- `Income_500m`: 0.025860 (average income within 500m)
 - `Average_Building_Height_1000m`: 0.023096 (average building height within 1000m)
 - `tree_avg_diam_1000m`: 0.020426 (average tree diameter within 1000m)
 - `roads_ratio_1000m`: 0.020365 (road ratio within 1000m)
@@ -205,7 +205,7 @@ The project relies on the following Python libraries:
 
 **Best Model:** ExtraTreesRegressor
 
-**Validation R² Score:** 0.0.9822
+**Validation R² Score in submission:** 0.0.9822
 
 **Execution Time:** [Pipeline completed in 25805.15 seconds (430.09 minutes)
 The pipeline successfully captured the complex relationships between urban features and the UHI Index, achieving strong predictive performance.
