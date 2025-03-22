@@ -1,0 +1,2 @@
+n_estimators,max_depth,learning_rate,subsample,colsample_bytree,min_child_weight,reg_alpha,reg_lambda,random_state
+350,12,0.023128828972777973,0.8700432844285492,0.5009598744743067,2,7.358588895092744e-05,0.027745035091215925,42

@@ -1,0 +1,2 @@
+n_estimators,max_depth,min_samples_split,min_samples_leaf,max_features,bootstrap,random_state,n_jobs
+500,36,2,1,0.3282626510879204,False,42,-1
