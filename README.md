@@ -286,7 +286,7 @@ Below is a comprehensive list of all files in the repository, including datasets
 
 This project demonstrates a comprehensive approach to UHI prediction, integrating diverse open-source datasets and applying advanced feature engineering and machine learning techniques. The engineered features capture the multifaceted nature of urban environments, while the machine learning pipeline ensures robust predictions. Future improvements could include incorporating more recent data, exploring deep learning models, or addressing spatial autocorrelation more explicitly.
 
-Feel free to explore the datasets, review the detailed feature engineering steps, and examine the model training and validation process. For any questions, please open an issue or contact me at [your-email@example.com].
+Feel free to explore the datasets, review the detailed feature engineering steps, and examine the model training and validation process. For any questions, please open an issue or contact me at [somuab3@gmail.com].
 
 ---
 
